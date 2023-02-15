@@ -1,15 +1,14 @@
-package by.sologub.util;
+package by.statkevich.util;
 
-import by.sologub.model.Animal;
-import by.sologub.model.Car;
-import by.sologub.model.Flower;
-import by.sologub.model.House;
-import by.sologub.model.Person;
+import by.statkevich.model.Animal;
+import by.statkevich.model.Car;
+import by.statkevich.model.Flower;
+import by.statkevich.model.House;
+import by.statkevich.model.Person;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JSR310Module;
-import lombok.SneakyThrows;
 
 import java.io.File;
 import java.io.IOException;
