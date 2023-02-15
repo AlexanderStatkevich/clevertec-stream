@@ -15,7 +15,6 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -181,8 +180,10 @@ public class Main {
                                                         .sorted(
                                                                 Comparator.comparing((Person person) ->
                                                                                 ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()) < 18
-                                                                                        || "Male".equals(person.getGender()) && ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()) > 63
-                                                                                        || "Female".equals(person.getGender()) && ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()) > 58,
+                                                                                        || "Male".equals(person.getGender())
+                                                                                        && ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()) > 63
+                                                                                        || "Female".equals(person.getGender())
+                                                                                        && ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()) > 58,
                                                                         Boolean::compareTo).reversed()
                                                         ),
                                                 Collectors.toList()
@@ -197,7 +198,6 @@ public class Main {
         for (Person person : evacuated) {
             System.out.println(person);
         }
-        ;
     }
 
 
@@ -233,11 +233,11 @@ public class Main {
         }
         if (("Black".equals(car.getColor()) && car.getMass() > 4000)
                 || List.of("GMC", "Dodge").contains(car.getCarMake())) {
-            return "Kazahstan";
+            return "Kazakhstan";
         }
         if (car.getReleaseYear() < 1982
                 || List.of("Civic", "Cherokee").contains(car.getCarModel())) {
-            return "Kirgizstan";
+            return "Kyrgyzstan";
         }
         if (!List.of("Yellow", "Red", "Green", "Blue").contains(car.getColor())
                 || car.getPrice() > 40000) {
