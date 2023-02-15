@@ -176,7 +176,7 @@ public class Main {
                                 Collectors.filtering(
                                         not(house -> "Hospital".equals(house.getBuildingType())),
                                         Collectors.flatMapping(
-                                                x -> x.getPersonList().stream()
+                                                house -> house.getPersonList().stream()
                                                         .sorted(
                                                                 Comparator.comparing((Person person) ->
                                                                                 ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()) < 18
